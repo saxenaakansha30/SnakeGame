@@ -1,0 +1,18 @@
+{
+    "name": "phpSnake/SnakeGame",
+    "description": "Snake Game from PHP7",
+    "type": "project",
+    "authors": [
+        {
+            "name": "saxenaakansha30",
+            "email": "saxenaakansha30@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "react/event-loop": "^0.5.2"
+    },
+    "autoload": {
+        "psr-4": { "Src\\": "src/" }
+    }
+}
