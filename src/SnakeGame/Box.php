@@ -24,10 +24,10 @@ class Box {
   protected $box = array();
 
   protected function __construct(int $rowSize, int $colSize) {
-	  $this->rowSize = $rowSize;
-	  $this->colSize = $colSize;
-	  $this->rowMax = $rowSize - 1;
-	  $this->colMax = $colSize - 1;
+    $this->rowSize = $this->getOddNumber($rowSize);
+    $this->colSize = $this->getOddNumber($colSize);
+    $this->rowMax = $this->getOddNumber($rowSize) - 1;
+    $this->colMax = $this->getOddNumber($colSize) - 1;
   }
   
   /**
@@ -59,6 +59,17 @@ class Box {
 	  }
 	  print "\n";
 	}
+  }
+  
+  /**
+   * Function to check if row/col boundaries are even if not then make them by
+   * decreasing 1.
+   */
+  public function getOddNumber(int $number) {
+    if ($number % 2 == 0) {
+	  return $number - 1;
+    }
+    return $number;
   }
 
 }

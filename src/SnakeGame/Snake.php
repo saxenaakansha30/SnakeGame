@@ -71,7 +71,7 @@ class Snake extends Box {
       $this->box[$newHeadCol][$newHeadRow] = 'x';
 	  array_unshift($this->position, $newHead);
       $lastElement = count($this->position) - 1;
-
+ 
 	  if (!$this->snakeEatFood($newHeadCol, $newHeadRow)) { // Unset last element as snake is moved.
         $this->box[$this->position[$lastElement]['col']][$this->position[$lastElement]['row']] = ' ';
         unset($this->position[$lastElement]);
@@ -114,8 +114,8 @@ class Snake extends Box {
   /**
    * Function to check if snake ate the food or not.
    */
-  function snakeEatFood($snakeNewHeadCol, $nakeNewHeadRow) {
-	if (($this->food['row'] == $nakeNewHeadRow) && ($snakeNewHeadCol == $this->food['col'])) {
+  function snakeEatFood($snakeNewHeadCol, $snakeNewHeadRow) {
+    if (($this->food['row'] == $snakeNewHeadRow) && ($snakeNewHeadCol == $this->food['col'])) {
 	  $this->ateFood = True;
 	  return True;
 	} else {
